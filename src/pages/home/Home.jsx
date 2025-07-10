@@ -1,4 +1,5 @@
 import { useEffect, useState, useMemo } from "react";
+import { useOutletContext } from "react-router-dom";
 import { getAllProducts, updateFavorite } from "../../service/api";
 import ProductCard from "../../components/productCard/ProductCard";
 import FilterBar from "../../components/filterBar/FilterBar";
@@ -8,12 +9,11 @@ import Suggestions from "./Suggestions";
 import FloatingChatbot from "../../components/chatbot/FloatingChatbot";
 
 const Home = () => {
+  const { searchQuery } = useOutletContext(); // từ Header
   const [products, setProducts] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
   const [priceFilter, setPriceFilter] = useState("");
   const [showAll, setShowAll] = useState(false);
 
-  // ✅ Gọi API 1 lần duy nhất
   useEffect(() => {
     getAllProducts()
       .then((res) => {
@@ -23,7 +23,6 @@ const Home = () => {
       .catch(() => toast.error("Lỗi khi tải sản phẩm"));
   }, []);
 
-  // ✅ Xử lý lọc – đưa vào useMemo
   const filteredProducts = useMemo(() => {
     return products.filter((product) => {
       const matchName = product.name
@@ -43,7 +42,6 @@ const Home = () => {
     });
   }, [products, searchQuery, priceFilter]);
 
-  // ✅ Toggle favorite & update API
   const handleToggleFavorite = async (id, currentFavorite) => {
     try {
       const updated = await updateFavorite(id, !currentFavorite);
@@ -65,14 +63,15 @@ const Home = () => {
   return (
     <div className="home-container">
       <h2>Danh sách khoá học</h2>
-      <FilterBar
-        searchQuery={searchQuery}
-        onSearch={setSearchQuery}
-        priceFilter={priceFilter}
-        onFilter={setPriceFilter}
-      />
+
       <Suggestions onToggleFavorite={handleToggleFavorite} />
+
       <div className="wrapper">
+        <FilterBar
+          showSearch={false}
+          priceFilter={priceFilter}
+          onFilter={setPriceFilter}
+        />
         <div className="grid-container">
           {(showAll ? filteredProducts : filteredProducts.slice(0, 8)).map(
             (product) => (
@@ -93,6 +92,7 @@ const Home = () => {
           </div>
         )}
       </div>
+
       <FloatingChatbot onToggleFavorite={handleToggleFavorite} />
     </div>
   );

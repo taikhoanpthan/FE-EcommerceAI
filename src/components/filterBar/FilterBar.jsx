@@ -1,15 +1,16 @@
-// src/components/FilterBar.jsx
 import "./FilterBar.scss";
 
-const FilterBar = ({ searchQuery, onSearch, priceFilter, onFilter }) => {
+const FilterBar = ({ showSearch = true, searchQuery, onSearch, priceFilter, onFilter }) => {
   return (
     <div className="filter-bar">
-      <input
-        type="text"
-        placeholder="Tìm kiếm khoá học..."
-        value={searchQuery}
-        onChange={(e) => onSearch(e.target.value)}
-      />
+      {showSearch && (
+        <input
+          type="text"
+          placeholder="Tìm kiếm khoá học..."
+          value={searchQuery}
+          onChange={(e) => onSearch(e.target.value)}
+        />
+      )}
       <select value={priceFilter} onChange={(e) => onFilter(e.target.value)}>
         <option value="">Tất cả</option>
         <option value="low">&lt; 500K</option>

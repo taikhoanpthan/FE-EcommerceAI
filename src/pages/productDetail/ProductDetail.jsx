@@ -4,6 +4,8 @@ import { useEffect, useState } from "react";
 import { getAllProducts } from "../../service/api";
 import "./ProductDetail.scss";
 
+// ... import giữ nguyên
+
 const ProductDetail = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
@@ -49,7 +51,43 @@ const ProductDetail = () => {
             <p className="category">📘 {product.category}</p>
             <p className="price">Giá: {product.price.toLocaleString()}đ</p>
             <p className="rating">Đánh giá: {product.rating} ⭐</p>
-            <div className="desc">{product.longDescription}</div>
+
+            <div className="desc">
+              {product.longDescription || "Không có mô tả chi tiết"}
+
+              {/* Nếu là khoá học Next.js thì chèn mô tả đặc biệt */}
+              {product.name.toLowerCase().includes("next.js") && (
+                <div className="highlight-description">
+                  <h4>Mô tả đặc biệt về khoá học Next.js</h4>
+                  <p><strong>(Cập nhật):</strong> bổ sung Next.js 14 và Server Actions</p>
+                  <p>
+                    Next.JS là một Framework Javascript chuyên làm Frontend, tích hợp sẵn thư viện React để code giao diện UI một cách hiệu quả.
+                  </p>
+                  <p>
+                    Lợi thế của Next.js là khả năng routing, nested routes, rendering server-side giúp tối ưu SEO và hiệu năng.
+                  </p>
+                  <p>
+                    Trong khóa học này, bạn sẽ học Next.JS 13+ bằng Typescript, thực hành clone website SoundCloud.
+                  </p>
+                  <ul>
+                    <li>✅ Đăng nhập với Google, GitHub, tài khoản local</li>
+                    <li>✅ Audio Track, Wavetrack dạng sóng</li>
+                    <li>✅ Bình luận theo mốc thời gian trên track</li>
+                    <li>✅ Playlist, Like, Tìm kiếm, Quản trị admin</li>
+                  </ul>
+                  <p>
+                    🔗 Xem thêm tại:{" "}
+                    <a
+                      href="https://next-auth.js.org/providers/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      https://next-auth.js.org/providers/
+                    </a>
+                  </p>
+                </div>
+              )}
+            </div>
           </div>
         </div>
 
@@ -99,3 +137,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+
