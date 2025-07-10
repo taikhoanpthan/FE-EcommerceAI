@@ -1,0 +1,36 @@
+// src/styles/global.scss
+@import "./variables.scss";
+
+body {
+  font-family: $font-main;
+  background-color: #fafafa;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+@media (max-width: 768px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid-container {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card img {
+    height: 140px;
+  }
+}

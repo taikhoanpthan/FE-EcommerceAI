@@ -1,0 +1,84 @@
+@import "../../styles/variables.scss";
+
+.home-container {
+  padding: 24px 0;
+
+  h2 {
+    font-size: 26px;
+    color: $primary-color;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 45px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 480px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+.see-more {
+  margin-top: 24px;
+  text-align: center;
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 8%);
+    }
+  }
+}
+
+.suggestions {
+  margin-top: 32px;
+  text-align: center;
+
+  .wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  button {
+    background-color: $primary-color;
+    color: white;
+    padding: 10px 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: darken($primary-color, 8%);
+    }
+  }
+
+  p {
+    color: red;
+    margin-top: 16px;
+  }
+}

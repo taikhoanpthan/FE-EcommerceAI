@@ -1,0 +1,44 @@
+.footer {
+  background: linear-gradient(135deg, #1890ff, #4facfe);
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: 60px;
+    bottom: 0;
+  .footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      margin-bottom: 16px;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 20px;
+
+      a {
+        color: white;
+        font-size: 18px;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #d9f1ff;
+        }
+      }
+    }
+
+    .copyright {
+      font-size: 14px;
+      color: #e0f0ff;
+    }
+  }
+}

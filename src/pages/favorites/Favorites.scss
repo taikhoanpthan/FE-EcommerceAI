@@ -1,0 +1,23 @@
+// src/pages/favorites/Favorites.scss
+@import "../../styles/variables.scss";
+
+.favorites-page {
+  padding: 24px;
+
+  h2 {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
+  }
+
+  p {
+    font-size: 16px;
+    color: #888;
+  }
+}
