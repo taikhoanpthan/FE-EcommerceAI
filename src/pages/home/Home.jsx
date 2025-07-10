@@ -64,8 +64,6 @@ const Home = () => {
     <div className="home-container">
       <h2>Danh sách khoá học</h2>
 
-      <Suggestions onToggleFavorite={handleToggleFavorite} />
-
       <div className="wrapper">
         <FilterBar
           showSearch={false}
@@ -94,6 +92,7 @@ const Home = () => {
       </div>
 
       <FloatingChatbot onToggleFavorite={handleToggleFavorite} />
+         <Suggestions onToggleFavorite={handleToggleFavorite} />
     </div>
   );
 };

@@ -1,6 +1,12 @@
-// src/styles/global.scss
-@import "./variables.scss";
+$primary-color: #2f80ed;
+$secondary-color: #f2f2f2;
+$text-color: #333;
+$danger-color: #e74c3c;
 
+$font-main: "Segoe UI", sans-serif;
+
+$breakpoint-md: 768px;
+$breakpoint-sm: 480px;
 body {
   font-family: $font-main;
   background-color: #fafafa;

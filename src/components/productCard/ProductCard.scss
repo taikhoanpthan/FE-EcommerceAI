@@ -1,6 +1,8 @@
 @use "sass:color";
+
 $primary-color: #3498db;
 $danger-color: #e74c3c;
+
 .product-card {
   background: #fff;
   border-radius: 12px;
@@ -78,5 +80,12 @@ $danger-color: #e74c3c;
         transform: scale(1.1);
       }
     }
+  }
+}
+
+// ✅ Responsive
+@media (max-width: 768px) {
+  .product-card {
+    margin: 0px 20px;
   }
 }

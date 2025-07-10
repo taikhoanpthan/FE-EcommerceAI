@@ -1,44 +1,71 @@
 .footer {
-  background: linear-gradient(135deg, #1890ff, #4facfe);
+background: linear-gradient(to right, #141e30, #243b55); // xanh đen
   color: #fff;
-  padding: 40px 20px;
-  text-align: center;
-  margin-top: 60px;
-    bottom: 0;
-  .footer-content {
-    max-width: 800px;
+  padding: 3rem 2rem;
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 0 auto;
+  }
 
-    h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
+  &__section {
+    flex: 1 1 220px;
+
+    h4 {
+      margin-bottom: 1rem;
+      font-size: 1.1rem;
+      color: #ffffffcc;
     }
 
-    p {
-      font-size: 16px;
-      margin-bottom: 16px;
-    }
+    ul {
+      list-style: none;
+      padding: 0;
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
-      margin-bottom: 20px;
-
-      a {
-        color: white;
-        font-size: 18px;
-        transition: color 0.3s;
+      li {
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+        transition: color 0.2s;
 
         &:hover {
-          color: #d9f1ff;
+          color: #ff9a9e;
         }
       }
     }
 
-    .copyright {
-      font-size: 14px;
-      color: #e0f0ff;
+    p {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      color: #cccccc;
+      max-width: 300px;
+    }
+  }
+
+  &__logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+
+  &__socials {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.4rem;
+    margin-top: 0.5rem;
+
+    svg {
+      cursor: pointer;
+      transition: transform 0.3s, color 0.3s;
+      color: #ffffffdd;
+
+      &:hover {
+        color: #ff9a9e;
+        transform: scale(1.2);
+      }
     }
   }
 }
