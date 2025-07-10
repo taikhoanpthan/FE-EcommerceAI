@@ -7,6 +7,7 @@ Người dùng có thể tìm kiếm khoá học, lọc theo giá, xem chi tiế
 ---
 
 ## 🚀 Demo
+
 > Trang chủ hiển thị danh sách khoá học và các tính năng gợi ý sản phẩm, lọc, yêu thích.
 
 ---
@@ -22,14 +23,23 @@ Người dùng có thể tìm kiếm khoá học, lọc theo giá, xem chi tiế
 - 📌 LocalStorage để lưu lịch sử xem và danh sách yêu thích
 
 ---
+
 ## ⚙️ Hướng dẫn cài đặt & chạy
 
 ### 1. Tải mã nguồn
+
+git clone https://github.com/taikhoanpthan/FE-EcommerceAI.git
+
 ### 2. Cài đặt dependencies
- npm install
+
+npm install
+
 ### 3. Chạy dev
- npm run dev
+
+npm run dev
+
 ### Mock endpoint:
+
 https://662a405e67df268010a324e1.mockapi.io/Ecommerce_FE
 
 💡 Tính năng nổi bật
