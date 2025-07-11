@@ -165,3 +165,103 @@
     }
   }
 }
+@media (max-width: 768px) {
+  .chatbot-popup {
+    width: 90vw;
+    right: 5vw;
+    bottom: 80px;
+    max-height: 80vh;
+    border-radius: 10px;
+
+    .chatbot-header {
+      font-size: 15px;
+      padding: 10px 14px;
+    }
+
+    .chatbot-box {
+      .chat-content {
+        padding: 12px;
+
+        .chat-msg {
+          p {
+            font-size: 14px;
+            padding: 8px 12px;
+          }
+
+          .grid {
+            gap: 10px;
+
+            .product-card {
+              img {
+                border-radius: 6px 6px 0 0;
+              }
+            }
+          }
+        }
+      }
+
+      .chat-input {
+        padding: 10px;
+
+        input {
+          padding: 7px 10px;
+          font-size: 13px;
+        }
+
+        button {
+          padding: 7px 12px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .chatbot-button {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 16px;
+    right: 16px;
+  }
+
+  .chatbot-popup {
+    width: 100vw;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    max-height: none;
+    border-radius: 0;
+
+    .chatbot-header {
+      border-radius: 0;
+      font-size: 14px;
+    }
+
+    .chatbot-box {
+      .chat-content {
+        padding: 10px;
+
+        .chat-msg {
+          p {
+            font-size: 13px;
+          }
+        }
+      }
+
+      .chat-input {
+        padding: 10px 8px;
+
+        input {
+          font-size: 13px;
+        }
+
+        button {
+          font-size: 13px;
+          padding: 6px 10px;
+        }
+      }
+    }
+  }
+}

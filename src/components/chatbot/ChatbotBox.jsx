@@ -1,11 +1,18 @@
 // src/components/chatbot/ChatbotBox.jsx
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ProductCard from "../productCard/ProductCard";
-import "./Chatbot.scss"
+import "./Chatbot.scss";
 const ChatbotBox = ({ onToggleFavorite }) => {
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
+  const chatEndRef = useRef(null);
+  const scrollToBottom = () => {
+    chatEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
 
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
   const handleSend = () => {
     if (!input.trim()) return;
 
@@ -14,12 +21,32 @@ const ChatbotBox = ({ onToggleFavorite }) => {
 
     setTimeout(() => {
       const all = JSON.parse(localStorage.getItem("allProducts")) || [];
-      const keyword = input.toLowerCase();
-      const suggestions = all.filter(
-        (p) =>
-          p.name.toLowerCase().includes(keyword) ||
-          p.category.toLowerCase().includes(keyword)
-      );
+
+      const stopWords = [
+        "tôi",
+        "muốn",
+        "học",
+        "về",
+        "trở",
+        "thành",
+        "là",
+        "cần",
+        "tìm",
+        "khóa",
+        "khóa học",
+      ];
+      const words = input
+        .toLowerCase()
+        .split(/\s+/)
+        .filter((w) => !stopWords.includes(w));
+
+      const suggestions = all.filter((p) => {
+        const name = p.name.toLowerCase();
+        const category = p.category.toLowerCase();
+        return words.some(
+          (word) => name.includes(word) || category.includes(word)
+        );
+      });
 
       const botMessage = {
         role: "bot",
@@ -55,6 +82,7 @@ const ChatbotBox = ({ onToggleFavorite }) => {
             )}
           </div>
         ))}
+        <div ref={chatEndRef} />
       </div>
       <div className="chat-input">
         <input
