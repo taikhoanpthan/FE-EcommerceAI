@@ -30,7 +30,7 @@ Người dùng có thể tìm kiếm khoá học, lọc theo giá, xem chi tiế
 
 git clone https://github.com/taikhoanpthan/FE-EcommerceAI.git
 
-### 2. Cài đặt dependencies
+### 2. Di chuyển đến thư mục
 
 cd EDU-AI-PLATFORM
 
