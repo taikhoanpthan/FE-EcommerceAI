@@ -69,7 +69,6 @@ const ProductDetail = () => {
           </div>
         </div>
 
-        {/* Đánh giá & nhận xét */}
         <div className="product-rating">
           <h3>Đánh giá & nhận xét</h3>
           <div className="rating-summary">

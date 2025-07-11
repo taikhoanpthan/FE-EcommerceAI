@@ -9,7 +9,7 @@ import Suggestions from "./Suggestions";
 import FloatingChatbot from "../../components/chatbot/FloatingChatbot";
 
 const Home = () => {
-  const { searchQuery } = useOutletContext(); // từ Header
+  const { searchQuery } = useOutletContext(); 
   const [products, setProducts] = useState([]);
   const [priceFilter, setPriceFilter] = useState("");
   const [showAll, setShowAll] = useState(false);

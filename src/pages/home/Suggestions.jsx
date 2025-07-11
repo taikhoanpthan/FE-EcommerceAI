@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getHistory } from "../../service/history";
 import ProductCard from "../../components/productCard/ProductCard";
-import Skeleton from "react-loading-skeleton"; // nếu chưa cài: `npm i react-loading-skeleton`
+import Skeleton from "react-loading-skeleton"; 
 import "react-loading-skeleton/dist/skeleton.css";
 import "./Suggestions.scss";
 const Suggestions = ({ onToggleFavorite }) => {

@@ -1,4 +1,3 @@
-// src/components/chatbot/FloatingChatbot.jsx
 import { useState } from "react";
 import { FaCommentDots, FaTimes } from "react-icons/fa";
 import ChatbotBox from "./ChatbotBox";
