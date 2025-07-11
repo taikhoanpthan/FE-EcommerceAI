@@ -12,14 +12,14 @@
   }
 
   select {
-  padding: 8px 30px 8px 10px; // padding phải rộng để không đè lên mũi tên
+  padding: 8px 30px 8px 10px; 
   border-radius: 6px;
   border: 1px solid #ccc;
   background: white;
-  appearance: none; // ẩn mũi tên mặc định để tùy chỉnh
+  appearance: none; 
   background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D'10'%20height%3D'6'%20viewBox%3D'0%200%2010%206'%20fill%3D'none'%20xmlns%3D'http%3A//www.w3.org/2000/svg'%3E%3Cpath%20d%3D'M1%201L5%205L9%201'%20stroke%3D'%23999'%20stroke-width%3D'1.5'%20stroke-linecap%3D'round'%20stroke-linejoin%3D'round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
-  background-position: right 10px center; // chỉnh vị trí mũi tên
+  background-position: right 10px center; 
   background-size: 12px;
 }
 }
