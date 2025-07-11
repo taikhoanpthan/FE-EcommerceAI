@@ -32,9 +32,13 @@ git clone https://github.com/taikhoanpthan/FE-EcommerceAI.git
 
 ### 2. Cài đặt dependencies
 
+cd EDU-AI-PLATFORM
+
+### 3. Cài đặt dependencies
+
 npm install
 
-### 3. Chạy dev
+### 4. Chạy dev
 
 npm run dev
 
