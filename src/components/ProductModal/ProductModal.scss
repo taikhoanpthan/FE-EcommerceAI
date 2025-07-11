@@ -1,0 +1,100 @@
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999;
+
+  &.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+}
+
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 600px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  transform: scale(0.95);
+  opacity: 0;
+  transition: all 0.3s ease;
+
+  &.visible {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 1px black solid;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+  }
+
+  .price {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #d0021b;
+  }
+}
+
+.close-button {
+  position: absolute;
+  right: 1rem;
+  top: -0.5rem;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.2s;
+
+  &:hover {
+    color: #d0021b;
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .modal-content {
+    padding: 1.2rem;
+    max-width: 90%;
+  }
+
+  .modal-content h2 {
+    font-size: 1.4rem;
+  }
+  .close-button{
+    top: -0.5rem;
+    right: 0;
+  }
+  .modal-content p {
+    font-size: 0.95rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+}
